@@ -1,10 +1,12 @@
 from bootstrapvz.base import Task
 from bootstrapvz.common import phases
+from ..file_copy import FileCopyCommand
 
 
 class ImageExecuteCommand(Task):
     description = 'Executing commands in the image'
     phase = phases.user_modification
+    predecessors = [FileCopyCommand]
 
     @classmethod
     def run(cls, info):
