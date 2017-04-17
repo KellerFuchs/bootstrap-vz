@@ -1,6 +1,6 @@
 from bootstrapvz.base import Task
 from bootstrapvz.common import phases
-from ..file_copy import FileCopyCommand
+from ..file_copy.tasks import FileCopyCommand
 
 
 class ImageExecuteCommand(Task):

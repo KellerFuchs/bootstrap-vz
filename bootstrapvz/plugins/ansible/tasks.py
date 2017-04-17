@@ -1,5 +1,6 @@
 from bootstrapvz.base import Task
 from bootstrapvz.common import phases
+from ..commands.tasks import ImageExecuteCommand
 import os
 
 
@@ -31,6 +32,7 @@ class AddPackages(Task):
 class RunAnsiblePlaybook(Task):
     description = 'Running ansible playbooks'
     phase = phases.user_modification
+    predecessors = [ImageExecuteCommand]
 
     @classmethod
     def run(cls, info):

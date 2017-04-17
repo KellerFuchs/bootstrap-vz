@@ -36,6 +36,8 @@ properties:
                   type: string
                 group:
                   type: string
+                symlinks:
+                  type: boolean
               required: [src, dst]
               additionalProperties: false
 

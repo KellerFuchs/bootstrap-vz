@@ -67,6 +67,9 @@ class FileCopyCommand(Task):
             if os.path.isfile(src_path):
                 shutil.copy(src_path, final_destination)
             else:
-                shutil.copytree(src_path, final_destination)
+                symlinks = file_entry.get('symlinks', False)
+                shutil.copytree(src_path,
+                                final_destination,
+                                symlinks=symlinks)
 
             modify_path(info, file_entry['dst'], file_entry)
